@@ -1,5 +1,5 @@
 import UserModel from '../models/userModel';
-import { UserWithAge } from '../interfaces/User';
+import { User, UserWithAge } from '../interfaces/User';
 
 class UserService {
   constructor(private userModel: UserModel) {}
@@ -23,6 +23,13 @@ class UserService {
       age: UserService.getAge(user.birthDate),
     }));
     return usersWithAge;
+  }
+
+  async create(user: Omit<User, 'id'>): Promise<User> {
+    const { birthDate } = user;
+    const formatedBirthDate = new Date(birthDate);
+    const userCreated = await this.userModel.create({ ...user, birthDate: formatedBirthDate });
+    return userCreated;
   }
 }
 

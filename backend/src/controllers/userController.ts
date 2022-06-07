@@ -8,6 +8,12 @@ class UserController {
     const response = await this.userService.getUsers();
     return res.status(200).json(response);
   }
+
+  async create(req: Request, res: Response): Promise<Response> {
+    const { body } = req;
+    const response = await this.userService.create(body);
+    return res.status(201).json(response);
+  }
 }
 
 export default UserController;

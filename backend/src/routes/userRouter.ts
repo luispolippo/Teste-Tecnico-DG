@@ -10,6 +10,7 @@ class UserRouter {
 
   getRoutes() {
     this.route.get('/', (req, res) => this.userController.getUsers(req, res));
+    this.route.post('/', (req, res) => this.userController.create(req, res));
     return this.route;
   }
 }
