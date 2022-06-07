@@ -3,3 +3,9 @@ export interface User {
   name: string,
   birthDate: Date
 }
+
+export interface UserWithAge {
+  id: number,
+  name: string,
+  age: number,
+}
