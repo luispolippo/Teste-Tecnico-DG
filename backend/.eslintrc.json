@@ -15,7 +15,6 @@
         }
     ],
     "parserOptions": {
-        "tsconfigRootDir": "./backend",
         "project": "./tsconfig.json",
         "ecmaVersion": "latest",
         "sourceType": "module"
