@@ -1,0 +1,21 @@
+{
+  "name": "teste-tecnico-dg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:backend": "cd backend/ && npm start",
+    "start:frontend": "cd frontend/ && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luispolippo/Teste-Tecnico-DG.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luispolippo/Teste-Tecnico-DG/issues"
+  },
+  "homepage": "https://github.com/luispolippo/Teste-Tecnico-DG#readme"
+}
