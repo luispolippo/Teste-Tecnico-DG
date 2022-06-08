@@ -59,6 +59,7 @@ function Form({ loadingAtt }: FormProps) {
           className="input"
           value={name}
           onChange={(e) => setName(e.target.value)}
+          data-testid="name-input"
         />
       </div>
 
@@ -69,6 +70,7 @@ function Form({ loadingAtt }: FormProps) {
           className="input w-60 md:w-36 pr-1"
           value={birthDate}
           onChange={(e) => setBirthDate(e.target.value)}
+          data-testid="birthDate-input"
         />
       </div>
       {
@@ -76,6 +78,7 @@ function Form({ loadingAtt }: FormProps) {
           <button
             className="bg-green-600 mt-2 px-3 py-1 rounded-sm text-slate-50 disabled:bg-gray-300"
             disabled={buttonDisabled}
+            data-testid="form-button"
           >
               Salvar
           </button>
