@@ -25,7 +25,7 @@ function Form() {
   }
 
   const sendForm = async (data: FormType) => {
-    await axios.post('/localhost:3001/users', data);
+    await axios.post('http://localhost:3001/users', data);
   }
 
   const handleSubmit = (e: FormEvent) => {
