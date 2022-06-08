@@ -14,13 +14,14 @@ type TableProps = {
   }
 }
 
+const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:3001'
 
 function Table({ loadingAtt }: TableProps) {
   const [users, setUsers] = useState<User[]>([]);
   const { loading } = loadingAtt;
 
   useEffect(() => {
-    axios.get<User[]>('http://localhost:3001/users')
+    axios.get<User[]>(`${BASE_URL}/users`)
       .then((data) => setUsers(data.data))
       .catch(() => setUsers([]));
   }, [loading]);

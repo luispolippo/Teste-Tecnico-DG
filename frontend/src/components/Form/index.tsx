@@ -13,6 +13,8 @@ type FormProps = {
   }
 }
 
+const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:3001'
+
 function Form({ loadingAtt }: FormProps) {
   const [name, setName] = useState<string>('');
   const [birthDate, setBirthDate] = useState<string>('');
@@ -35,7 +37,7 @@ function Form({ loadingAtt }: FormProps) {
 
   const sendForm = async (data: FormType) => {
     setLoading(true);
-    await axios.post('http://localhost:3001/users', data);
+    await axios.post(`${BASE_URL}/users`, data);
     setLoading(false);
   }
 
