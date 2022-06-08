@@ -4,9 +4,9 @@ import { User, UserWithAge } from '../interfaces/User';
 class UserService {
   constructor(private userModel: UserModel) {}
 
-  static getAge(dateString: Date): number {
+  static getAge(birthDateString: Date): number {
     const today = new Date();
-    const birthDate = new Date(dateString);
+    const birthDate = new Date(birthDateString);
     let age = today.getFullYear() - birthDate.getFullYear();
     const month = today.getMonth() - birthDate.getMonth();
     if (month < 0 || (month === 0 && today.getDate() < birthDate.getDate())) {
