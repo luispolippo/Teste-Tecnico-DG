@@ -21,7 +21,8 @@ function Table({ loadingAtt }: TableProps) {
 
   useEffect(() => {
     axios.get<User[]>('http://localhost:3001/users')
-      .then((data) => setUsers(data.data));
+      .then((data) => setUsers(data.data))
+      .catch(() => setUsers([]));
   }, [loading]);
 
   return(
@@ -31,21 +32,24 @@ function Table({ loadingAtt }: TableProps) {
       </h2>
       {
         loading ? <h1>Carregando...</h1> : (
-          <table className="table-auto border border-collapse w-3/4 mt-5 text-center">
+          <table
+            className="table-auto border border-collapse w-3/4 mt-5 text-center"
+            data-testid="table"
+          >
           <thead className="bg-[rgb(23,53,110)] text-slate-50">
             <tr>
-              <th className="table-border">Id</th>
-              <th className="table-border">Nome</th>
-              <th className="table-border">Idade</th>
+              <th className="table-border" data-testid="table-id-head">Id</th>
+              <th className="table-border" data-testid="table-name-head">Nome</th>
+              <th className="table-border" data-testid="table-age-head">Idade</th>
             </tr>
           </thead>
           <tbody>
               {
-                users.map((user) => (
+                users.map((user, index) => (
                   <tr key={user.id} className="bg-slate-200">
-                    <td className="table-border">{user.id}</td>
-                    <td className="table-border">{user.name}</td>
-                    <td className="table-border">{user.age}</td>
+                    <td className="table-border" data-testid={`id-table-cell-${index}`}>{user.id}</td>
+                    <td className="table-border" data-testid={`name-table-cell-${index}`}>{user.name}</td>
+                    <td className="table-border" data-testid={`age-table-cell-${index}`}>{user.age}</td>
                   </tr>
                 ))
               }
