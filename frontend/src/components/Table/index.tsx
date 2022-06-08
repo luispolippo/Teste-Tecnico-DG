@@ -14,7 +14,7 @@ function Table() {
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr className="bg-slate-200">
             <td className="table-border">Guilherme Polippo</td>
             <td className="table-border">28</td>
           </tr>
