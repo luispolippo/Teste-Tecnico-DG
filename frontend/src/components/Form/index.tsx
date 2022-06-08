@@ -6,10 +6,19 @@ type FormType = {
   birthDate: string,
 }
 
-function Form() {
+type FormProps = {
+  loadingAtt: {
+    loading: boolean,
+    setLoading: React.Dispatch<React.SetStateAction<boolean>>
+  }
+}
+
+function Form({ loadingAtt }: FormProps) {
   const [name, setName] = useState<string>('');
   const [birthDate, setBirthDate] = useState<string>('');
   const [buttonDisabled, setButtonDisabled] = useState<boolean>(true);
+
+  const { loading, setLoading } = loadingAtt
 
   useEffect(() => {
     if (name.length && birthDate.length) {
@@ -25,7 +34,9 @@ function Form() {
   }
 
   const sendForm = async (data: FormType) => {
+    setLoading(true);
     await axios.post('http://localhost:3001/users', data);
+    setLoading(false);
   }
 
   const handleSubmit = (e: FormEvent) => {
@@ -60,13 +71,16 @@ function Form() {
           onChange={(e) => setBirthDate(e.target.value)}
         />
       </div>
-
-      <button
-        className="bg-green-600 mt-2 px-3 py-1 rounded-sm text-slate-50 disabled:bg-gray-300"
-        disabled={buttonDisabled}
-      >
-          Salvar
-      </button>
+      {
+        loading ? <h1>Carregando...</h1> : (
+          <button
+            className="bg-green-600 mt-2 px-3 py-1 rounded-sm text-slate-50 disabled:bg-gray-300"
+            disabled={buttonDisabled}
+          >
+              Salvar
+          </button>
+        )
+      }
     </form>
   );
 }
