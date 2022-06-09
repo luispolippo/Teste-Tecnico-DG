@@ -4,21 +4,21 @@ Projeto Full-Stack desenvolvido para o teste técnico da DG Solutions
 
 ## Índice
 - [DG Solutions Teste Técnico](#dg-solutions-teste-técnico)
-  - [Índice](#índice)
-  - [Rodando Projeto](#rodando-projeto)
-  - [Rodando projeto com Docker (Recomendado)](#rodando-projeto-com-docker-recomendado)
-  - [Rodando Testes](#rodando-testes)
-    - [Frontend](#frontend)
-    - [Backend](#backend)
-  - [Stacks Utilizadas](#stacks-utilizadas)
-    - [Frontend](#frontend-1)
-    - [Backend](#backend-1)
-    - [Conteinerização](#conteinerização)
-    - [Testes](#testes)
+	- [Índice](#índice)
+	- [Rodando Projeto](#rodando-projeto)
+	- [Rodando projeto com Docker (Recomendado)](#rodando-projeto-com-docker-recomendado)
+	- [Rodando Testes](#rodando-testes)
+		- [Frontend](#frontend)
+		- [Backend](#backend)
+	- [Stacks Utilizadas](#stacks-utilizadas)
+		- [Frontend](#frontend-1)
+		- [Backend](#backend-1)
+		- [Conteinerização](#conteinerização)
+		- [Testes](#testes)
 ## Rodando Projeto
 Para rodar o projeto em sua máquina local siga os seguintes passos:
 1. Abra seu terminal e clone o repositório
-	* Use o comando: `git@github.com:luispolippo/Teste-Tecnico-DG.git`
+	* Use o comando: `git clone git@github.com:luispolippo/Teste-Tecnico-DG.git`
 	* Entre na pasta do repositório que você acabou de clonar: `cd Teste-Tecnico-DG/`
 2. Instale as dependências
 	* Para instalar as dependências dos módulos de Frontend e de Backend use o comando: `npm run prepare:project`
@@ -42,7 +42,7 @@ Para rodar o projeto em sua máquina local siga os seguintes passos:
 
 Para rodar o projeto com docker em sua máquina local siga os seguintes passos:
 1. Abra seu terminal e clone o repositório
-	* Use o comando: `git@github.com:luispolippo/Teste-Tecnico-DG.git`
+	* Use o comando: `git clone git@github.com:luispolippo/Teste-Tecnico-DG.git`
 	* Entre na pasta do repositório que você acabou de clonar: `cd Teste-Tecnico-DG/`
 2. Suba os containers
 	* Use o comando `"npm run docker-compose:up`
