@@ -6,6 +6,9 @@
   "scripts": {
     "start:backend": "cd backend/ && npm start",
     "start:frontend": "cd frontend/ && npm start",
+    "prepare:front": "cd frontend/ && npm i",
+    "prepare:back": "cd backend/ && npm i",
+    "prepare:project": "npm run prepare:front && npm run prepare:back",
     "docker-compose:up": "docker-compose up -d --build",
     "docker-compose:down": "docker-compose down"
   },
