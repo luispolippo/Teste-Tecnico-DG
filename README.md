@@ -7,6 +7,7 @@ Projeto Full-Stack desenvolvido para o teste técnico da DG Solutions
 	- [Índice](#índice)
 	- [Rodando Projeto](#rodando-projeto)
 	- [Rodando projeto com Docker (Recomendado)](#rodando-projeto-com-docker-recomendado)
+	- [Modelo `.env` *backend*](#modelo-env-backend)
 	- [Rodando Testes](#rodando-testes)
 		- [Frontend](#frontend)
 		- [Backend](#backend)
@@ -25,7 +26,8 @@ Para rodar o projeto em sua máquina local siga os seguintes passos:
 3. Configure as variáveis de ambiente de *backend*
 	* Entre no módulo de backend: `cd backend/`
 	* Altere o nome do arquivo `.env.example` para `.env`
-	* Caso queira você pode alterar o valor de alguma variável de ambiente, mas **não é necessário**.
+	* Certifique-se de ter um banco de dados *MYSQL* rodando e altere os valores do `.env` com os valores de configuração do seu banco
+	* Modelo do `.env` pode ser acessado [aqui](#modelo-env-backend)
 	*  ⚠️ **Atenção:** Não é necessário alterar nada na váriavel `DATABASE_URL="mysql://${DB_USER}:${DB_PASS}@${DB_HOST}:${DB_PORT}/${DB_NAME}"`
 4. Configure as variáveis de ambiente de *frontend*
 	* Entre no módulo de frontend: `cd frontend/`(Caso esteja na pasta de backend use: `cd ../frontend/`)
@@ -55,6 +57,20 @@ Para rodar o projeto com docker em sua máquina local siga os seguintes passos:
 	* **Projeto Rodando!**
 4. Derrubando os containers
 	* Caso precise você pode derrubar os containers com o comando: `npm run docker-compose:down`.
+
+## Modelo `.env` *backend*
+
+```
+PORT=3001 (Porta que a aplicação backend irá iniciar)
+DB_USER=root (Nome de usuário configurado no DB)
+DB_PASS=password (Senha configurada no DB)
+DB_NAME=dg_solutions_users (Nome da Database no DB)
+DB_HOST=localhost (Nome do HOST do DB)
+DB_PORT=3306 (Porta configurada no DB)
+
+<!-- Não é necessário alterar a variável abaixo -->
+DATABASE_URL="mysql://${DB_USER}:${DB_PASS}@${DB_HOST}:${DB_PORT}/${DB_NAME}"
+```
 
 ## Rodando Testes
 
