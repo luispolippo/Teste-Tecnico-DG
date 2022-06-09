@@ -41,6 +41,9 @@ Para rodar o projeto em sua máquina local siga os seguintes passos:
 ## Rodando projeto com Docker (Recomendado)
 
 Para rodar o projeto com docker em sua máquina local siga os seguintes passos:
+
+⚠️ **Atenção:** Certifique-se que as portas 3000 e 3001 estão livres!
+
 1. Abra seu terminal e clone o repositório
 	* Use o comando: `git clone git@github.com:luispolippo/Teste-Tecnico-DG.git`
 	* Entre na pasta do repositório que você acabou de clonar: `cd Teste-Tecnico-DG/`
