@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start:backend": "cd backend/ && npm start",
-    "start:frontend": "cd frontend/ && npm start"
+    "start:frontend": "cd frontend/ && npm start",
+    "docker-compose:up": "docker-compose up -d --build",
+    "docker-compose:down": "docker-compose down"
   },
   "repository": {
     "type": "git",
